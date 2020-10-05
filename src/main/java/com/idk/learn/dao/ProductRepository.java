@@ -9,5 +9,5 @@ public interface ProductRepository extends CrudRepository<Product,Integer> {
 
     Product findByName(String name);
 
-
+    void deleteByName(String name);
 }

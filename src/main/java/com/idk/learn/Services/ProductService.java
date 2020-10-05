@@ -13,4 +13,6 @@ public interface ProductService {
 
 
     void deleteProduct(int id);
+
+    void deleteProductByName(String name);
 }

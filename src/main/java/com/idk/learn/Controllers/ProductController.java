@@ -33,9 +33,12 @@ public class ProductController {
         System.out.println(product);
         productService.addProduct(product);
     }
-    @DeleteMapping(path="/{id}")
+    @DeleteMapping(path="/item/{id}")
     public void deleteProduct(@PathVariable int id){
      productService.deleteProduct(id);
-
+    }
+    @DeleteMapping(path="/{name}")
+    public void deleteProductByName(@PathVariable String name){
+        productService.deleteProductByName(name);
     }
 }
