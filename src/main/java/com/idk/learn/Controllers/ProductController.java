@@ -22,8 +22,20 @@ public class ProductController {
         return result;
     }
 
+    @GetMapping(path = "/{name}")
+    public Product getItem(@PathVariable String name){
+        Product result = productService.getItem(name);
+        return result;
+    }
+
     @PostMapping
     public void addProduct(@RequestBody Product product){
+        System.out.println(product);
         productService.addProduct(product);
+    }
+    @DeleteMapping(path="/{id}")
+    public void deleteProduct(@PathVariable int id){
+     productService.deleteProduct(id);
+
     }
 }

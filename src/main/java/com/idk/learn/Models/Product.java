@@ -3,7 +3,7 @@ package com.idk.learn.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="\"my_items\"")
+@Table(name="my_products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,22 +11,20 @@ public class Product {
 
     @Column(unique = true)
     private String name;
-    private String desc;
+    private String description;
     private Double price;
 
     public Product(){}
 
-    public Product(String name, String desc, Double price) {
-        this.desc = desc;
+    public Product(String name, String description, Double price) {
         this.name = name;
+        this.description = description;
         this.price = price;
     }
 
     public Integer getId() {
         return id;
     }
-
-
 
     public String getName() {
         return name;
@@ -37,11 +35,11 @@ public class Product {
     }
 
     public String getDesc() {
-        return desc;
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDesc(String description) {
+        this.description = description;
     }
 
     public Double getPrice() {

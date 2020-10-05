@@ -26,6 +26,19 @@ public class ProductServiceImplementation implements ProductService {
 
     @Override
     public void addProduct(Product product) {
+        System.out.println(product);
        productRepository.save(product);
+    }
+
+    @Override
+    public Product getItem(String name) {
+        Product result = productRepository.findByName(name);
+        return result;
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+        productRepository.deleteById(id);
+
     }
 }
